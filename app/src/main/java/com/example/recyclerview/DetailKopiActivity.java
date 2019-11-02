@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DetailMovieActivity extends AppCompatActivity {
+public class DetailKopiActivity extends AppCompatActivity {
     ImageView imgView;
     TextView tvNama;
     TextView tvRating;
@@ -16,7 +16,7 @@ public class DetailMovieActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_movie);
+        setContentView(R.layout.activity_detail_kopi);
         setData();
     }
 

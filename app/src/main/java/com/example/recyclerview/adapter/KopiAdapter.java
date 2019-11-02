@@ -9,15 +9,15 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recyclerview.R;
-import com.example.recyclerview.model.MovieModel;
+import com.example.recyclerview.model.KopiModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieAdapter extends
-RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
+public class KopiAdapter extends
+RecyclerView.Adapter<KopiAdapter.MyViewHolder> {
 
-    List<MovieModel> listItem;
+    List<KopiModel> listItem;
 
     TextView tvName, tvRating, tvJadwal;
     View view;
@@ -33,7 +33,7 @@ RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
         this.mOnItemClickListener = mItemClickListener;
     }
 
-    public MovieAdapter(Context ctx) {
+    public KopiAdapter(Context ctx) {
         this.ctx = ctx;
         listItem = new ArrayList<>();
     }
@@ -47,15 +47,15 @@ RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_list_movie, parent, false);
+                .inflate(R.layout.item_list_kopi, parent, false);
         MyViewHolder myViewHolder = new MyViewHolder(view);
         return myViewHolder;
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        MovieModel item = listItem.get(position);
-        tvName = holder.itemView.findViewById(R.id.txt_name_movie);
+        KopiModel item = listItem.get(position);
+        tvName = holder.itemView.findViewById(R.id.txt_name_kopi);
         tvJadwal = holder.itemView.findViewById(R.id.txt_jadwal);
         tvRating = holder.itemView.findViewById(R.id.txt_rating);
         tvName.setText(item.getName());
@@ -75,13 +75,13 @@ RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
         return listItem.size();
     }
 
-    public void add(MovieModel item) {
+    public void add(KopiModel item) {
         listItem.add(item);
         notifyItemInserted(listItem.size() + 1);
     }
 
-    public void addAll(List<MovieModel> listItem) {
-        for (MovieModel item : listItem) {
+    public void addAll(List<KopiModel> listItem) {
+        for (KopiModel item : listItem) {
             add(item);
         }
     }
@@ -96,7 +96,7 @@ RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
         notifyDataSetChanged();
     }
 
-    public void swap(List<MovieModel> datas) {
+    public void swap(List<KopiModel> datas) {
         if (datas == null || datas.size() == 0) listItem.clear();
         if (listItem != null && listItem.size() > 0)
             listItem.clear();
@@ -104,17 +104,17 @@ RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
         notifyDataSetChanged();
     }
 
-    public MovieModel getItem(int pos) {
+    public KopiModel getItem(int pos) {
         return listItem.get(pos);
     }
 
-    public void setFilter(List<MovieModel> list) {
+    public void setFilter(List<KopiModel> list) {
         listItem = new ArrayList<>();
         listItem.addAll(list);
         notifyDataSetChanged();
     }
 
-    public List<MovieModel> getListItem() {
+    public List<KopiModel> getListItem() {
         return listItem;
     }
 }

@@ -1,12 +1,12 @@
 package com.example.recyclerview.model;
 
-public class MovieModel {
+public class KopiModel {
     String name;
     String rating;
     String jadwal;
     String DesCription;
 
-    public MovieModel(String name, String rating, String jadwal, String desCription) {
+    public KopiModel(String name, String rating, String jadwal, String desCription) {
         this.name = name;
         this.rating = rating;
         this.jadwal = jadwal;
